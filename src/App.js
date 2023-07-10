@@ -5,25 +5,28 @@ function App() {
   return (
     <div className="App">
       <h2>React components</h2>
-      <MyPara text = {'HI '}/>
-      <MyPara text = {'Git (version control system) and GitHub'}/>
-      <MyPara text = {'Basic HTML, CSS'}/>
-      <MyPara text = {'Smell the ReactJS and JS'}/>
-      <MyPara text = {'JSX'}/>
-      <MyPara text = {'ES6 / ES7'}/>
-      <MyPara text = {'Babel'}/>
-      <MyPara text = {'WebpacK'}/>
-      <MyPara text = {'React file system'}/>
-      <MyPara text = {'package.Json'}/>
+      <MyPara status='completed' text={'HI '} />
+      <MyPara status='completed' text={'Git (version control system) and GitHub'} />
+      <MyPara status='completed' text={'Basic HTML, CSS'} />
+      <MyPara status='completed' text={'Smell the ReactJS and JS'} />
+      <MyPara status='completed' text={'JSX'} />
+      <MyPara status='completed' text={'ES6 / ES7'} />
+      <MyPara status='ongoing' text={'Babel'} />
+      <MyPara status='ongoing' text={'WebpacK'} />
+      <MyPara status='notstart' text={'React file system'} />
+      <MyPara status='notstart' text={'package.Json'} />
     </div>
   );
 }
 
 export default App;
 
-//create new components
+//create new components and prints
 
 function MyPara(props) {
-  console.log(props); 
-  return <p style={{ fontSize: '20px' }}>{props.text}</p>;
+  console.log(props.status);
+  return <p style={{
+    fontSize: '20px',
+    color: props.status === 'completed' ? 'green' : props.status === 'ongoing' ? 'orange' : 'black'
+  }}>{props.text}</p>;
 }
