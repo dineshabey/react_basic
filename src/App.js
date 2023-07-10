@@ -4,22 +4,27 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>React components</h2>
+      <MyPara text = {'HI '}/>
+
+      <p>Git (version control system) and GitHub</p>
+      <p>Basic HTML, CSS</p>
+      <p>Smell the ReactJS and JS</p>
+      <p>JSX</p>
+      <p>ES6 / ES7</p>
+      <p>Babel</p>
+      <p>WebpacK</p>
+      <p>React file system</p>
+      <p>package.json</p>
     </div>
   );
 }
 
 export default App;
+
+//create new components
+
+function MyPara(props) {
+  console.log(props);
+  return <p style={{ fontSize: '20px' }}>Git is version controlle systems - MyPara </p>;
+}
