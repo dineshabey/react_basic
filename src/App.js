@@ -24,9 +24,9 @@ export default App;
 //create new components and prints
 
 function MyPara(props) {
-  console.log(props.status);
+  const {status,text} = props; //destructuring 
   return <p style={{
     fontSize: '20px',
-    color: props.status === 'completed' ? 'green' : props.status === 'ongoing' ? 'orange' : 'black'
-  }}>{props.text}</p>;
+    color: status === 'completed' ? 'green' : status === 'ongoing' ? 'orange' : 'black'
+  }}>{text}</p>;
 }
