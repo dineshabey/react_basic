@@ -5,11 +5,13 @@ const courceContent = [
   {
     status: 'completed',
     text: "Git (version control system) and GitHub",
-
+    isVisibale: 'true',
   },
   {
     status: 'completed',
     text: "Introducion to PHP",
+    isVisibale: 'true',
+
 
   },
   {
@@ -54,19 +56,19 @@ function App() {
   return (
     <div className="App">
       {courceContent.map((val, key) => {
-        return <MyPara key={key} status={val.status} text={val.text} />
+        return <CourceContentItem>
+          <p style={{
+            fontSize: '20px',
+            backgroundColor: 'wheat',
+            color: val.status === 'completed' ? 'green' : val.status === 'ongoing' ? 'orange' : 'black'
+          }}>
+
+            {val.text}
+            <span style={{ color: 'red', fontSize: '20px', fontWeight: 'bold' }}> - {val.status}</span>
+          </p>
+        </CourceContentItem>
       })}
-      {/* <h2>React components</h2>
-      <MyPara status='completed' text={'HI '} />
-      <MyPara status='completed' text={'Git (version control system) and GitHub'} />
-      <MyPara status='completed' text={'Basic HTML, CSS'} />
-      <MyPara status='completed' text={'Smell the ReactJS and JS'} />
-      <MyPara status='completed' text={'JSX'} />
-      <MyPara status='completed' text={'ES6 / ES7'} />
-      <MyPara status='ongoing' text={'Babel'} />
-      <MyPara status='ongoing' text={'WebpacK'} />
-      <MyPara status='notstart' text={'React file system'} />
-      <MyPara status='notstart' text={'package.Json'} /> */}
+
     </div>
   );
 }
@@ -74,12 +76,28 @@ function App() {
 export default App;
 
 //create new components and prints
-
-function MyPara({status,text}) {
+//special propertie - children 
+function MyPara({ status, isVisibale, children }) {
   // console.log(text)
   // const { status, text } = props; //destructuring 
   return <p style={{
     fontSize: '20px',
     color: status === 'completed' ? 'green' : status === 'ongoing' ? 'orange' : 'black'
-  }}>{text}</p>;
+  }}>{children}</p>;
+}
+//special propertie - children  
+function CourceContentItem({ children }) {
+  return <p style={{ backgroundColor: 'wheat' }}>{children}</p>
+}
+
+
+function MyParaOne({ status, text }) {
+  // console.log(text)
+  // const { status, text } = props; //destructuring 
+  return <p style={{
+    fontSize: '20px',
+    color: status === 'completed' ? 'green' : status === 'ongoing' ? 'orange' : 'black'
+  }}>
+
+  </p>;
 }
