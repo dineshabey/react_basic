@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
+import CourceContentItem from './CourceContentItem';
 
 const courceContent = [
   {
@@ -56,20 +57,8 @@ const courceContent = [
 function App() {
   return (
     <div className="App">
-      <Home />
-      {/* {courceContent.map((val, key) => {
-        return <CourceContentItem>
-          <p style={{
-            fontSize: '20px',
-            backgroundColor: 'wheat',
-            color: val.status === 'completed' ? 'green' : val.status === 'ongoing' ? 'orange' : 'black'
-          }}>
+      <Home courceContent={courceContent} />
 
-            {val.text}
-            <span style={{ color: 'red', fontSize: '20px', fontWeight: 'bold' }}> - {val.status}</span>
-          </p>
-        </CourceContentItem>
-      })} */}
 
     </div>
   );
@@ -77,29 +66,8 @@ function App() {
 
 export default App;
 
-//create new components and prints
-//special propertie - children 
-function MyPara({ status, isVisibale, children }) {
-  // console.log(text)
-  // const { status, text } = props; //destructuring 
-  return <p style={{
-    fontSize: '20px',
-    color: status === 'completed' ? 'green' : status === 'ongoing' ? 'orange' : 'black'
-  }}>{children}</p>;
-}
-//special propertie - children  
-function CourceContentItem({ children }) {
-  return <p style={{ backgroundColor: 'wheat' }}>{children}</p>
-}
 
 
-function MyParaOne({ status, text }) {
-  // console.log(text)
-  // const { status, text } = props; //destructuring 
-  return <p style={{
-    fontSize: '20px',
-    color: status === 'completed' ? 'green' : status === 'ongoing' ? 'orange' : 'black'
-  }}>
 
-  </p>;
-}
+
+
