@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './Home';
 
 const courceContent = [
   {
@@ -55,7 +56,8 @@ const courceContent = [
 function App() {
   return (
     <div className="App">
-      {courceContent.map((val, key) => {
+      <Home />
+      {/* {courceContent.map((val, key) => {
         return <CourceContentItem>
           <p style={{
             fontSize: '20px',
@@ -67,7 +69,7 @@ function App() {
             <span style={{ color: 'red', fontSize: '20px', fontWeight: 'bold' }}> - {val.status}</span>
           </p>
         </CourceContentItem>
-      })}
+      })} */}
 
     </div>
   );
